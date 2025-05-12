@@ -1,60 +1,69 @@
-// ThemesComponent.jsx
+
+// src/components/ThemesComponent.jsx
 import React from 'react';
 
 const ThemesComponent = () => {
   const items = [
     {
       id: 1,
-      title: 'Thème 1',
-      imageUrl: 'https://via.placeholder.com/300x300.png?text=Th ème+1',
-      backgroundColor: '#f8f9fa', // Light gray background
+      title: 'Viandes',
+      image: '/images/pngegg (39).png',
+      backgroundColor: '#ECCFC8', // Light gray background
     },
     {
       id: 2,
-      title: 'Thème 2',
-      imageUrl: 'https://via.placeholder.com/300x300.png?text=Th ème+2',
-      backgroundColor: '#e9ecef', // Lighter gray background
+      title: 'Fruits & Légumes',
+      image: '/images/pngegg (53).png',
+      backgroundColor: '#ECCFC8', // Lighter gray background
     },
     {
       id: 3,
-      title: 'Thème 3',
-      imageUrl: 'https://via.placeholder.com/300x300.png?text=Th ème+3',
-      backgroundColor: '#dee2e6', // Medium gray background
+      title: 'Féculents',
+      image: '/images/féculents.png',
+      backgroundColor: '#ECCFC8', // Medium gray background
     },
     {
       id: 4,
-      title: 'Thème 4',
-      imageUrl: 'https://via.placeholder.com/300x300.png?text=Th ème+4',
-      backgroundColor: '#ced4da', // Darker gray background
+      title: 'Produits laitiers',
+      image: '/images/pngegg (51).png',
+      backgroundColor: '#ECCFC8', // Darker gray background
+    },
+    {
+      id: 5,
+      title: 'Poissons',
+      image: '/images/pngegg (41).png',
+      backgroundColor: '#ECCFC8', // Darker gray background
     },
   ];
 
   return (
     <div className="relative overflow-x-auto scrollbar-hide bg-[#F6F4D6] p-5 md:p-10 lg:p-24">
       {/* Conteneur principal */}
-      <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-4 md:overflow-visible">
+      <div
+        className="flex gap-4 overflow-x-auto grid lg:grid-cols-5 lg:overflow-visible"
+      >
         {items.map((item) => (
           <div
             key={item.id}
             className="min-w-[250px] md:min-w-0 flex-shrink-0"
           >
-            <div className="relative overflow-hidden rounded-lg shadow-md h-full">
-              {/* Superposition d'image en arrière-plan */}
-              <div
-                className="absolute inset-0 bg-cover bg-center opacity-75"
-                style={{ backgroundImage: `url(${item.imageUrl})` }}
-              ></div>
+            <div
+              className="relative overflow-hidden rounded-full shadow-md w-full h-full flex items-center justify-center border-2 border-white"
+              style={{ backgroundColor: item.backgroundColor }}
+            >
+              {/* Image principale */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-auto h-1/2 object-cover p-5"
+              />
 
               {/* Contenu visible */}
               <div
-                className="relative z-10 flex flex-col items-center justify-between h-full p-4 bg-[#ECCFC8] border-2 border-white dark:bg-neutral-800 rounded-lg text-center"
+                className="absolute inset-0 flex flex-col items-center justify-center text-center text-white"
               >
-                {/* Image centrée */}
-                <img
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="w-32 h-32 object-contain mb-4 mx-auto"
-                />
+                {/* Titre */}
+                <h3 className="text-xl text-[#373737] font-bold mb-2">{item.title}</h3>
               </div>
             </div>
           </div>

@@ -1,5 +1,8 @@
 import React from 'react';
+import LoginButton from '../components/LoginButton';
+
 const HeroHeader = () => {
+
   return (
     <header className="relative w-full bg-[#CFEDF2] overflow-hidden min-h-screen flex items-center justify-center px-4">
       {/* Texte */}
@@ -8,6 +11,7 @@ const HeroHeader = () => {
         <p className="text-lg md:text-xl font-semibold">
           Lorem ipsum dolor sit amet consectetur. Faucibus et erat lacus libero a lacus.
         </p>
+        <LoginButton />
       </div>
 
       {/* Fruits décoratifs flottants */}
