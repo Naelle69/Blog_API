@@ -37,7 +37,7 @@ const ThemesComponent = () => {
   ];
 
   return (
-    <div className="relative overflow-x-auto scrollbar-hide bg-[#F6F4D6] p-5 md:p-10 lg:p-24">
+    <div className="relative overflow-x-auto scrollbar-hide bg-[#F6F4D6] p-5 md:p-15 lg:p-32">
       {/* Conteneur principal */}
       <div
         className="flex gap-4 overflow-x-auto grid lg:grid-cols-5 lg:overflow-visible"

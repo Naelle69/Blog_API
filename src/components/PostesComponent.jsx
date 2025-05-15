@@ -70,9 +70,9 @@ const PostesComponent = () => {
   );
 
   return (
-    <div className="p-5 md:p-10 lg:p-24 bg-[#FDF9AA]">
+    <div className="p-5 md:p-15 lg:p-32 bg-[#FDF9AA]">
       <h2 className="text-sm md:text-md lg:text-lg text-[#373737] font-bold pb-5 md:pb-10">POSTES API</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {currentPosts.map((post) => (
           <Card
             key={post.id}

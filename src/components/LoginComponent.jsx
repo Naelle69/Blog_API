@@ -11,7 +11,7 @@ const Login = () => {
   // Hook de navigation
   const navigate = useNavigate();
 
-  // Gestion de la soumission du formulaire
+  // Gerer de la soumission du formulaire
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -29,7 +29,7 @@ const Login = () => {
         // Connexion réussie → sauvegarde locale + redirection
         localStorage.setItem('userId', user.id);
         localStorage.setItem('userName', user.name);
-        navigate(`/profile/${user.id}`);
+        navigate(`/profil/${user.id}`);
       } else {
         setError("Cet email n'existe pas.");
       }
@@ -41,23 +41,23 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#FDF9AA] min-h-screen flex items-center justify-center px-4">
-      <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg">
+    <div className="bg-[#F6F4D6] flex items-center justify-center px-4 py-16 relative">
+      <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg relative z-6 -mt-32 ">
 
         {/* Titre */}
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Connexion</h2>
+        <h2 className="text-2xl font-bold text-center text-[#373737] mb-6">Connexion</h2>
 
         {/* Dernier utilisateur connecté */}
         {localStorage.getItem('userName') && (
-          <p className="text-center text-sm text-gray-500 mb-6">
+          <p className="text-center text-sm text-[#373737] mb-6">
             Dernière connexion : {localStorage.getItem('userName')}
           </p>
         )}
 
         {/* Formulaire */}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className=' pb-46'>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-[#373737] mb-1">
               Email
             </label>
             <input
@@ -66,7 +66,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ECCFC8] transition"
+              className="w-full px-4 py-2 border border-[#CFEDF2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ECCFC8] transition"
               placeholder="Entrez votre email"
             />
           </div>
@@ -78,13 +78,20 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full bg-[#ECCFC8] hover:bg-[#e7c8c0] text-[#373737] font-semibold py-2 px-4 rounded-lg transition-colors ${
+            className={`w-full bg-[#ECCFC8] hover:bg-[#e7c8c0]" font-semibold text-[#373737] py-2 px-4 rounded-lg transition-colors ${
               loading ? 'opacity-70 cursor-not-allowed' : ''
             }`}
           >
             {loading ? 'Chargement...' : 'Se connecter'}
           </button>
         </form>
+
+            {/* Image en bas du formulaire */}
+        <img
+          src="/images/image_connexion.png" // Remplacez par le chemin de votre image
+          alt="Légumes"
+          className="absolute top-67 left-0 w-full h-auto "
+        />
       </div>
     </div>
   );

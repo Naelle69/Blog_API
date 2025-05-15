@@ -6,7 +6,7 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="relative flex w-full items-center justify-between bg-[#CFEDF2] py-2 shadow-md dark:bg-neutral-700 lg:flex-wrap lg:justify-start">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex w-full items-center justify-between bg-[#CFEDF2] py-2 shadow-md dark:bg-neutral-700 lg:flex-wrap lg:justify-start">
       <div className="px-6 w-full">
         <button
           className="block border-0 bg-transparent px-2 text-[#373737] hover:no-underline hover:shadow-none focus:outline-none dark:text-neutral-200 lg:hidden"
@@ -34,19 +34,19 @@ const Navbar = () => {
           <ul className="me-auto flex flex-col lg:flex-row">
             <li>
               <a
-                className="block py-2 pe-2 text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2"
-                href="#!"
+                className="block py-2 pe-2 text-[#373737] transition duration-200 hover:text-[#373737] dark:text-white/60 dark:hover:text-white/80 lg:px-2"
+                href="/"
               >
-                Regular link
+                Accueil
               </a>
             </li>
             <li className="relative">
               <button
-                className="flex items-center whitespace-nowrap py-2 pe-2 text-black/60 transition duration-200 hover:text-black/80 dark:text-white/60 dark:hover:text-white/80 lg:px-2"
+                className="flex items-center whitespace-nowrap py-2 pe-2 text-[#373737] transition duration-200 hover:text-[#373737] dark:text-white/60 dark:hover:text-white/80 lg:px-2"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
               >
-                Mega menu
+                Recettes
                 <span className="ms-2 [&>svg]:h-5 [&>svg]:w-5">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path

@@ -6,7 +6,7 @@ const Card = ({ title, description, image, buttonLabel }) => {
     <div className="bg-[#ffffff] rounded-lg border-2 border-[#CFEDF2] shadow-md overflow-hidden">
       <div className="bg-[#CFEDF2] rounded-b-lg">
         {/* Zone d'image centrée */}
-        <div className="p-4 flex items-center justify-center h-64 sm:h-72 md:h-80">
+        <div className="p-4 flex items-center text-[#373737] justify-center h-64 sm:h-72 md:h-80">
           <img
             src={image}
             alt={title}
@@ -24,38 +24,57 @@ const Card = ({ title, description, image, buttonLabel }) => {
 
         {/* Bouton */}
         <button className="bg-[#ECCFC8] hover:bg-[#e7c8c0] text-[#373737] font-semibold py-3 px-6 rounded">
-          {buttonLabel || 'Découvrir la recette'}
+          {buttonLabel || 'Découvrir le menu'}
         </button>
       </div>
     </div>
   );
 };
 
-const PostesComponent = () => {
-  const postsPerPage = 6;
+const  MenusComponent = () => {
+  const menusPerPage = 6;
 
-  const posts = [
-    {
-      id: 1,
-      title: 'Recette de Salade de Fruits',
-      description: 'Lorem ipsum dolor sit amet consectetur. Faucibus et erat lacus libero a lacus.',
-      image: "/images/pngegg (25).png",
-      buttonLabel: 'Découvrir la recette',
-    },
-    {
-      id: 2,
-      title: 'Recette de Salade de Fruits',
-      description: 'Lorem ipsum dolor sit amet consectetur. Faucibus et erat lacus libero a lacus.',
-      image: "/images/pngegg (37).png",
-      buttonLabel: 'Découvrir la recette',
-    },
-    {
-      id: 3,
-      title: 'Recette de Salade de Fruits',
-      description: 'Lorem ipsum dolor sit amet consectetur. Faucibus et erat lacus libero a lacus.',
-      image: "/images/pngegg (36).png",
-      buttonLabel: 'Découvrir la recette',
-    },
+  const menus = [
+  /*   {
+      mainMenusid: 1,
+    
+      {
+        id: 1,
+        title: 'Menu Vegan',
+        description: 'Lorem ipsum dolor sit amet consectetur. Faucibus et erat lacus libero a lacus.',
+        image: "/images/pngegg (50).png",
+        buttonLabel: 'Découvrir la recette',
+        composition: {
+          plat:{
+            recipeTitle: "Purée de carottes + tomates",
+            ingredients: ["Carottes", "Tomates", "Huile d'olive", "Ail", "Sel, poivre"],
+            recipe: "1. Lavez les carottes et les tomates.\n2. Faites cuire les carottes à la vapeur pendant 15 min.\n3. Coupez les tomates en dés et faites-les revenir à la poêle.\n4. Mixez le tout avec un peu d’huile d’olive et des épices."
+          },
+          entree: {
+            recipeTitle: "Panecakes pommes de terre + courgettes",
+            ingredients: ["Pommes de terre", "Courgettes", "Oignon", "Œufs", "Farine"],
+            recipe: "1. Râpez les pommes de terre et les courgettes.\n2. Mélangez avec l’oignon émincé, des œufs battus et une cuillère de farine.\n3. Faites cuire dans une poêle chaude jusqu’à coloration dorée."
+          },
+          dessert: "moelleux chocolat sans oeuf",
+          gouter: "pancake de pommes de terre et courgettes",
+        }
+      },
+      {
+        id: 2,
+        title: 'Menu Poisson',
+        description: 'Lorem ipsum dolor sit amet consectetur. Faucibus et erat lacus libero a lacus.',
+        image: "/images/pngegg (40).png",
+        buttonLabel: 'Découvrir la recette',
+      },
+      {
+        id: 3,
+        title: 'Menu Viande',
+        description: 'Lorem ipsum dolor sit amet consectetur. Faucibus et erat lacus libero a lacus.',
+        image: "/images/pngegg (39).png",
+        buttonLabel: 'Découvrir la recette',
+      }
+    } */
+
     {
       id: 4,
       title: 'Recette de Salade de Fruits',
@@ -87,7 +106,7 @@ const PostesComponent = () => {
   ];
 
   const [currentPage, setCurrentPage] = React.useState(1);
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const totalPages = Math.ceil(menus.length / menusPerPage);
 
   // Fonctions de navigation
   const goToPreviousPage = () => {
@@ -102,17 +121,17 @@ const PostesComponent = () => {
     }
   };
 
-  // Posts à afficher selon la page courante
-  const currentPosts = posts.slice(
-    (currentPage - 1) * postsPerPage,
-    currentPage * postsPerPage
+  // menus à afficher selon la page courante
+  const currentmenus = menus.slice(
+    (currentPage - 1) * menusPerPage,
+    currentPage * menusPerPage
   );
 
   return (
     <div className="p-5 md:p-10 lg:p-24 bg-[#FDF9AA]">
       {/* Grille des cartes */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {currentPosts.map((post) => (
+        {currentmenus.map((post) => (
           <Card
             key={post.id}
             title={post.title}
@@ -157,4 +176,4 @@ const PostesComponent = () => {
   );
 };
 
-export default PostesComponent;
+export default MenusComponent;

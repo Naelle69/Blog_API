@@ -9,7 +9,7 @@ const Footer = () => {
           
           {/* Première section de liens */}
           <div className="mb-6">
-            <h5 className="mb-2.5 font-bold uppercase">Liens</h5>
+            <h5 className="mb-2.5 font-bold uppercase text-[#FFF]">Liens</h5>
             <ul className="mb-0 list-none">
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 1</a></li>
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 2</a></li>
@@ -20,7 +20,7 @@ const Footer = () => {
 
           {/* Deuxième section de liens */}
           <div className="mb-6">
-            <h5 className="mb-2.5 font-bold uppercase">Liens</h5>
+            <h5 className="mb-2.5 font-bold uppercase text-[#FFF]">Liens</h5>
             <ul className="mb-0 list-none">
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 1</a></li>
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 2</a></li>
@@ -31,7 +31,7 @@ const Footer = () => {
 
           {/* Troisième section de liens */}
           <div className="mb-6">
-            <h5 className="mb-2.5 font-bold uppercase">Liens</h5>
+            <h5 className="mb-2.5 font-bold uppercase text-[#FFF]">Liens</h5>
             <ul className="mb-0 list-none">
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 1</a></li>
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 2</a></li>
@@ -42,7 +42,7 @@ const Footer = () => {
 
           {/* Quatrième section de liens */}
           <div className="mb-6">
-            <h5 className="mb-2.5 font-bold uppercase">Liens</h5>
+            <h5 className="mb-2.5 font-bold uppercase text-[#FFF]">Liens</h5>
             <ul className="mb-0 list-none">
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 1</a></li>
               <li><a href="#!" className="text-gray-800 hover:text-gray-600 dark:text-gray-300">Lien 2</a></li>
